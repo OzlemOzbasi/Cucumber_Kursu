@@ -1,27 +1,61 @@
 package StepDefinitions;
 
+import Pages.DialogContent;
+import Utilities.GenelWebDriver;
 import io.cucumber.java.en.*;     //  bunun sonuna  *  ( yıldız ) ısaretını koyunca  asagıda kırmızı olan   Given  When  Then  duzelıyor
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
-public class _01_LoginSteps {   https://test.mersys.io/        username: turkeyts
-                                                          password: TechnoStudy123
+import java.time.Duration;
 
+public class _01_LoginSteps {      // https://test.mersys.io/        username: turkeyts
+                                   //                                password: TechnoStudy123
 
-    @Given("Navigate to basqar")
-    public void navigate_to_basqar() {
+    DialogContent dc = new DialogContent();
 
+    @Given("Navigate to Campus")
+    public void navigateToCampus() {
 
+        // System.out.println("merhaba 1");
+        GenelWebDriver.getDriver().get("https://test.mersys.io/");
     }
-
 
     @When("Enter username and password and click login button")
-    public void enter_username_and_password_and_click_login_button() {
-        System.out.println("Merhaba Gherkin");
+    public void enterUsernameAndPasswordAndClickLoginButton() {
+        // System.out.println("merhaba 2");
+
+       // waitleri var
+//        WebDriverWait wait = new WebDriverWait(GenelWebDriver.getDriver(), Duration.ofSeconds(30));
+//        wait.until(ExpectedConditions.visibilityOf(dc.username));
+//
+
+//        dc.username.sendKeys("turkeyts");
+//        dc.password.sendKeys("TechnoStudy123");
+//        dc.loginButton.click();
+
+
+        //   1 .aşama
+
+        dc.findAndSend("username","turkeyts");
+        dc.findAndSend("password","TechnoStudy123");
+
+        dc.findAndClick("loginButton");
+
+
+
     }
 
 
-    @Then("User should login successfully")
-    public void user_should_login_successfully() {
-        System.out.println("Merhaba Maven");
-    }
+        @Then("User should login successfully")
+        public void userShouldLoginSuccessfully() {
+
+//        dc.waitUntilVisible(dc.dashboard);
+//        Assert.assertTrue(dc.dashboard.getText().contains("Dashboard"));
+
+            dc.findAndContainsText("dashboard","Dashboard");
+            dc.findAndClick("acceptCookies");
+        }
+
 
 }

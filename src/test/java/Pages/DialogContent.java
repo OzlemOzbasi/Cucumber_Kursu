@@ -1,9 +1,15 @@
 package Pages;
 
 import Utilities.GenelWebDriver;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class DialogContent extends Parent{
 
@@ -65,6 +71,19 @@ public class DialogContent extends Parent{
     private WebElement deleteDialogBtn;
 
 
+    @FindBy(xpath = "//ms-text-field[@formcontrolname='budgetAccountIntegrationCode']//input")
+    private WebElement integrationCode;
+
+
+    @FindBy(xpath = "//ms-integer-field[@formcontrolname='priority']//input")
+    private WebElement priorityCode;
+
+
+    @FindBy(xpath = "//button[@class='consent-give'])[1]")
+    private WebElement acceptCookies;
+
+
+
 
     WebElement myElement;
     public void findAndSend(String strElement, String value){    // 2.aşama
@@ -79,8 +98,8 @@ public class DialogContent extends Parent{
             case "codeInput" : myElement = codeInput; break;
             case "shortName" : myElement = shortName; break;
             case "searchInput" : myElement = searchInput; break;
-       //     case "integrationCode" : myElement = integrationCode; break;
-       //     case "priorityCode" : myElement = priorityCode; break;
+            case "integrationCode" : myElement = integrationCode; break;
+            case "priorityCode" : myElement = priorityCode; break;
         }
 
         sendKeysFunction(myElement, value);
@@ -100,7 +119,7 @@ public class DialogContent extends Parent{
             case "searchButton" : myElement = searchButton; break;
             case "deleteButton" : myElement = deleteButton; break;
             case "deleteDialogBtn" : myElement = deleteDialogBtn; break;
-//            case "acceptCookies" : myElement = acceptCookies; break;
+            case "acceptCookies" : myElement = acceptCookies; break;
 
         }
 
@@ -130,12 +149,16 @@ public class DialogContent extends Parent{
         findAndClick("searchButton");            // arama butonuna bas
 
 
-        GenelWebDriver.Bekle(2);   // TODO:  incelenecek
+  //      WebDriverWait wait = new WebDriverWait (GenelWebDriver.getDriver(), Duration.ofSeconds(10));
+  //      wait .until(ExpectedConditions.stalenessOf(deleteButton));
+
+
+        waitUntilLoading();
+
+     //   GenelWebDriver.Bekle(2);   // TODO:  incelenecek
 
         findAndClick("deleteButton");            // silme butonuna bas
         findAndClick("deleteDialogBtn");         // dialogdaki silme butonuna bas
-
-
 
       }
 
@@ -143,4 +166,4 @@ public class DialogContent extends Parent{
 
 
 
-}
+    }

@@ -63,12 +63,16 @@ public class Parent {    // her pom da ( page object modellerın ortak fonksıyo
 
 
 
-    public void waitUntilLoading() {
+    public void waitUntilLoading() {     // Bekleme bölümü yapmış olduk   , StaleElements hatasını gıdermek ıcın
 
-    //    WebDriverWait wait = new WebDriverWait(GenelWebDriver.driver, Duration.ofSeconds(30));
-   //     wait.until(ExpectedConditions.numberOfElementsToBe(By.cssSelector("fuse-progress-bar > *"), 0));
+        WebDriverWait wait = new WebDriverWait (GenelWebDriver.driver, Duration.ofSeconds(30));
+        wait .until(ExpectedConditions.numberOfElementsToBe(By.cssSelector("fuse-progress-bar > * "), 0));
+        //                                        > child demek   * hepsi demek , yani child ların hepsi sıfır olana kadar bekle
+
+
+        // ınceledıgımız web sayfasının yanı Campus un  search tusuna basınca sayfanın en ustunde oluşan yükleme
+        // çizgısının locator ını bulmus olduk ve bu locator ın çocuklarının hepsi sıfır olana kadar bekle dedik
     }
-
 
 
     public List<WebElement> waitVisibleListAllElement(List<WebElement> elementList) {

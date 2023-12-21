@@ -13,6 +13,7 @@ import java.util.logging.Logger;
 
 public class GenelWebDriver {
 
+    public static WebDriver driver;
     // her 1 Thread e özel lokal static driver oluşturdum
     private static ThreadLocal<WebDriver> threadDriver=new ThreadLocal<>(); //webDriver 1 , webDriver 2..
     private static ThreadLocal<String> threadBrowserName=new ThreadLocal<>(); // chrome, firefox

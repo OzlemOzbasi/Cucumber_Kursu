@@ -1,6 +1,7 @@
 package StepDefinitions;
 
 import Pages.DialogContent;
+import Pages.FormContent;
 import Pages.LeftNav;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
@@ -12,11 +13,15 @@ public class _05_DatatableSteps {
     LeftNav ln = new LeftNav();
     DialogContent dc = new DialogContent();
 
+    FormContent fc = new FormContent();
+
 
     @And("Click on the element in the left Nav")
     public void clickOnTheElementInTheLeftNav(DataTable elements) {
 
         List<String> listElement = elements.asList(String.class);
+        //  Buradaki <String>  ile  (String.class) aynı seye denk geliyor ama parantez içine sadece String kabul etmediği için
+        //  (String.class) olarak yazıyoruz  DataTable da
 
         for (int i = 0; i < listElement.size(); i++) {
     //        System.out.println("listElement = " + listElement.get(i));
@@ -63,6 +68,19 @@ public class _05_DatatableSteps {
         for (int i = 0; i < listElement.size(); i++) {
             //        System.out.println("listElement = " + listElement.get(i));
             dc.SearchAndDelete(listElement.get(i));
+
+        }
+    }
+
+
+    @And("Click on the element in the Form Content")
+    public void clickOnTheElementInTheFormContent(DataTable elements) {
+
+        List<String> listElement = elements.asList(String.class);
+
+        for (int i = 0; i < listElement.size(); i++) {
+            //        System.out.println("listElement = " + listElement.get(i));
+            fc.findAndClick(listElement.get(i));
 
         }
     }

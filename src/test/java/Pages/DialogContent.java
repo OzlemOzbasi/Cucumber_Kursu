@@ -54,8 +54,11 @@ public class DialogContent extends Parent{
     @FindBy(xpath = "//button[@aria-label='Close dialog']")
     private WebElement closeDialog;
 
-
+/*
     @FindBy(xpath = "//ms-text-field[contains@placeholder,'FIELD.NAME']//input")
+    private WebElement searchInput;          */
+
+    @FindBy(xpath = "(//div[contains(@class,'mat-form-field-infix ng-tns-c74')]//input)[1]")
     private WebElement searchInput;
 
 
@@ -149,13 +152,8 @@ public class DialogContent extends Parent{
         findAndClick("searchButton");            // arama butonuna bas
 
 
-  //      WebDriverWait wait = new WebDriverWait (GenelWebDriver.getDriver(), Duration.ofSeconds(10));
-  //      wait .until(ExpectedConditions.stalenessOf(deleteButton));
-
-
         waitUntilLoading();
 
-     //   GenelWebDriver.Bekle(2);   // TODO:  incelenecek
 
         findAndClick("deleteButton");            // silme butonuna bas
         findAndClick("deleteDialogBtn");         // dialogdaki silme butonuna bas

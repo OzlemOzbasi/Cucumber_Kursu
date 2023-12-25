@@ -75,6 +75,9 @@ public class Parent {    // her pom da ( page object modellerın ortak fonksıyo
     }
 
 
+
+
+
     public List<WebElement> waitVisibleListAllElement(List<WebElement> elementList) {
 
         WebDriverWait wait = new WebDriverWait(GenelWebDriver.getDriver(), Duration.ofSeconds(30));

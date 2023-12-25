@@ -39,6 +39,21 @@ Feature: Entrance Exam Functionality
     Then Success message should be displayed
 
 
+    And Click on the element in the left Nav
+      |  entranceExamsOne    |
+      |  setupTwo            |
+      |  entranceExamsTwo    |
+
+
+    And User delete item from Dialog
+      | ozlemExam1 |
+                           #  eklemıs oldugumuz sey ne ise onu yazıyoruz silmek için
+
+    Then Success message should be displayed
+
+
+
+
 
 
 

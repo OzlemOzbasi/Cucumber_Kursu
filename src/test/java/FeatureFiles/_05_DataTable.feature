@@ -2,7 +2,7 @@ Feature: Datatable Functionality
 
   #  Datatable : Bir tane adımın içine birden fazla değer göndermek için
 
-  #  Scenario Outline  ise : Projeyi birden fazla birden fazla çalıştırmak için
+  #  Scenario Outline  ise : Projeyi birden fazla çalıştırmak için
 
 
   #  Scenario Outline: da verilen değerler için tüm senaryo her satır kadar tekrar çalıştırılıyordu.

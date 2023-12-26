@@ -1,7 +1,7 @@
 Feature:  Country Functionality
 
 
-  @SmokeTest @SundayTest
+  @SmokeTest    @SundayTest       # Buraya ıstedıgın kadar yanyana yazabılırsın
   Scenario: Create a Country
 
 

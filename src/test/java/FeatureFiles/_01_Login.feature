@@ -12,7 +12,7 @@
   Feature: Login Functionality
 
 
-  #  @SmokeTest  @Regression
+   @SmokeTest   @Regression
     Scenario: Login with valid username and password
 
 

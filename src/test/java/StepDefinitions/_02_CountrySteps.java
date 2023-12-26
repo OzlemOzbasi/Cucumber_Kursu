@@ -25,8 +25,10 @@ public class _02_CountrySteps {
     @When("Create a country")
     public void createACountry() {
 
-        String randomGenName = RandomStringUtils.randomAlphabetic(8);
+        // Country ıcın delete calısmayanlar ıcın bu alttakı 2 String i yazdık
+        String randomGenName = RandomStringUtils.randomAlphabetic(8);  // Her calıstırmada farklı ulke ve code vermesı ıcın yazdık
         String randomGenCode = RandomStringUtils.randomNumeric(4);
+
 
         dc.findAndClick("addButton");
         dc.findAndSend("nameInput", randomGenName);

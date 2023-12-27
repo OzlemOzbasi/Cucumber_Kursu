@@ -1,6 +1,7 @@
 package StepDefinitions;
 
 import Utilities.GenelWebDriver;
+import com.aventstack.extentreports.service.ExtentTestManager;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -48,6 +49,11 @@ public class Hooks {
              File ekranDosyasi = screenshot.getScreenshotAs(OutputType.FILE);
 
 
+             //  Bu alttakını https://www.programsbuzz.com/article/add-screenshot-cucumber-testng-extent-report  burdan aldık
+             // Extend Report eklıyor - web sayfasında kopyalayıp aldık
+             ExtentTestManager.getTest().addScreenCaptureFromBase64String(getBase64Screenshot());
+
+
              try {
 
                  FileUtils.copyFile(ekranDosyasi,
@@ -65,6 +71,15 @@ public class Hooks {
 
         //  Hatalı ise --- ekran görüntüsü al dicez
         GenelWebDriver . quitDriver();    //  acılan web sayfasını kapatmak ıcın yazdık
+    }
+
+
+  //  Bu alttakını https://www.programsbuzz.com/article/add-screenshot-cucumber-testng-extent-report  burdan aldık
+  // Target altında SparkReport ta olusturulan raporlara screenshot eklenmesı ıcın
+    public String getBase64Screenshot()
+    {
+        return ((TakesScreenshot) GenelWebDriver.getDriver()).getScreenshotAs(OutputType.BASE64);
+              // WEb sayfasında burada base yazıyordu onu GenelWebDriver olarak degıstırdık sadece
     }
 
 

@@ -129,7 +129,7 @@
         </dependency>
 
 
-
+        <!-- https://www.programsbuzz.com/article/cucumber-testng-extent-report-using-adapter      -->
         <!-- rapor için ekledık      -->
         <dependency>
             <groupId>com.aventstack</groupId>

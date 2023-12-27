@@ -16,7 +16,7 @@ import org.testng.annotations.Listeners;
 
 )
 
-
+// Bu alttakını https://www.programsbuzz.com/article/cucumber-testng-extent-report-using-adapter sayfasından ekledık Report ıcın
 
 @Listeners({ExtentITestListenerClassAdapter.class})
 

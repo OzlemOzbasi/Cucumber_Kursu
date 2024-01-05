@@ -148,6 +148,14 @@
 
 
 
+        <!-- jdk problemi olursa bu alttaki ile çalışıyor ( mavenden olan test rapor calısıyor )   -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.24</version>
+            <optional>true</optional>
+        </dependency>
+
 
 
    </dependencies>

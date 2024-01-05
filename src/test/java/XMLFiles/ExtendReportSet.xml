@@ -3,8 +3,8 @@
 <!-- https://www.toolsqa.com/selenium-cucumber-framework/cucumber-extent-report/   sayfasından aldık hepsını-->
 <extentreports>
     <configuration>
-        <!-- report theme --> <!-- standard, dark -->
-        <theme>standard</theme>
+        <!-- report theme --> <!-- standard, dark  ( OLARAK ISTEDIGIMIZI YAPABILIRIZ , RAPORUN ARKA PLAN RENGI ) -->
+        <theme>dark</theme>
 
         <!-- document encoding -->  <!-- defaults to UTF-8 -->
         <encoding>UTF-8</encoding>

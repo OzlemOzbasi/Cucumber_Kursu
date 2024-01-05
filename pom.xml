@@ -138,9 +138,71 @@
         </dependency>
 
 
+        <!-- https://www.programsbuzz.com/article/masterthought-cucumber-reporting      -->
+        <!-- rapor için ekledık      -->
+        <dependency>
+            <groupId>net.masterthought</groupId>
+            <artifactId>cucumber-reporting</artifactId>
+            <version>5.7.2</version>
+        </dependency>
+
+
+
 
 
    </dependencies>
+
+
+    <!-- rapor için ekledık      -->
+    <build>
+        <plugins>
+
+         <!-- Alltakı plugın kısmını hoca verdı - derlemek için ekledık      -->
+         <!-- En sagda MAVEN kısmına tıkladıgımızda cıkan test kısmından calıstırabılmek ( RUN YAPABILMEK ICIN ) ıcın ekledık,
+              class lardaki run kısmı zaten  calısıyor     -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M1</version>
+                <configuration>
+
+                    <includes>
+         <!-- for run class or classes  **/: bulundugu lokasyonu bütün klasörlere göre bulabiliyor.    -->
+                        <include>**/_04_TestRunnerSmoke.java</include>
+                  <!--  <include>**/runners/*TestRunner*.java</include>      -->
+                    </includes>
+                    <testFailureIgnore>true</testFailureIgnore>
+
+                </configuration>
+            </plugin>
+
+
+      <!-- https://www.programsbuzz.com/article/masterthought-cucumber-reporting      -->
+      <!-- rapor için ekledık      -->
+            <plugin>
+                <groupId>net.masterthought</groupId>
+                <artifactId>maven-cucumber-reporting</artifactId>
+                <version>2.8.0</version>
+
+                <executions>
+                    <execution>
+                        <id>execution</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <projectName>Project Name</projectName>
+                            <outputDirectory>${project.build.directory}/Report/cucumber-reports</outputDirectory>
+                            <cucumberOutput>${project.build.directory}/cucumber/cucumber.json</cucumberOutput>
+                            <skippedFails>true</skippedFails>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+    </build>
 
 
 

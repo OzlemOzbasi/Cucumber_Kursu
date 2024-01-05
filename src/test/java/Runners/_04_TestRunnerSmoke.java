@@ -29,9 +29,13 @@ import io.cucumber.testng.CucumberOptions;
 
         tags = "@SmokeTest",       //  Hangi senaryolarda bu etiket varsa o senaryolar çalıstırılacak
         features = {"src/test/java/FeatureFiles/" },
-        glue = {"StepDefinitions"}
+        glue = {"StepDefinitions"},
+        plugin= {"pretty","html:target/site/cucumber-pretty","json:target/cucumber/cucumber.json"}
+    // plugin kısmını --- buradan  https://www.programsbuzz.com/article/masterthought-cucumber-reporting    rapor için ekledık  -->
+// Hangı testi calıstırmak yanı rapordakı ozellıgı hangı raporda gormek ıstıyorsak plugin kısmını oraya eklıyoruz
 
 )
 
 public class _04_TestRunnerSmoke extends AbstractTestNGCucumberTests {
+
 }

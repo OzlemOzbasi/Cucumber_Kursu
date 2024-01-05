@@ -1,0 +1,14 @@
+-------------------------------------------------------------------------------
+Test set: Runners._04_TestRunnerSmoke
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 14.789 s <<< FAILURE! - in Runners._04_TestRunnerSmoke
+runScenario(Runners._04_TestRunnerSmoke)  Time elapsed: 6.667 s  <<< FAILURE!
+io.cucumber.core.exception.CucumberException: Failed to instantiate class StepDefinitions._01_LoginSteps
+Caused by: java.lang.reflect.InvocationTargetException
+Caused by: java.lang.IllegalStateException: The path to the driver executable Unable to locate the chromedriver executable; for more information on how to install drivers, see https://www.selenium.dev/documentation/webdriver/getting_started/install_drivers/
+
+runScenario(Runners._04_TestRunnerSmoke)  Time elapsed: 6.536 s  <<< FAILURE!
+io.cucumber.core.exception.CucumberException: Failed to instantiate class StepDefinitions._01_LoginSteps
+Caused by: java.lang.reflect.InvocationTargetException
+Caused by: java.lang.IllegalStateException: The path to the driver executable Unable to locate the chromedriver executable; for more information on how to install drivers, see https://www.selenium.dev/documentation/webdriver/getting_started/install_drivers/
+

@@ -51,6 +51,7 @@ public class Hooks {
 
              //  Bu alttakını https://www.programsbuzz.com/article/add-screenshot-cucumber-testng-extent-report  burdan aldık
              // Extend Report eklıyor - web sayfasında kopyalayıp aldık
+             // Extend Report olmadıgında bu alttaki kısım kapatılmalı !!! yoksa run sonrası browserler KAPANMAZ
              ExtentTestManager.getTest().addScreenCaptureFromBase64String(getBase64Screenshot());
 
 

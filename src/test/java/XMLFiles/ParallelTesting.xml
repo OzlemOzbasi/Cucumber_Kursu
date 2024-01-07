@@ -3,11 +3,6 @@
 <suite name="Suit 1"  parallel="tests" thread-count="2" >
 
 
-    <listeners>
-        <listener class-name="com.aventstack.extentreports.testng.listener.ExtentITestListenerClassAdapter"></listener>
-    </listeners>
-
-
 
     <test name="Test 1">
         <parameter name="browser" value="firefox"></parameter>
@@ -24,13 +19,6 @@
         </classes>
     </test>
 
-
-    <test name="Test 3">
-        <parameter name="browser" value="safari"></parameter>
-        <classes>
-            <class name="Runners._08_TestRunnerParallel"></class>
-        </classes>
-    </test>
 
 
 

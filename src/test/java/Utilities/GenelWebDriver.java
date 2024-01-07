@@ -34,8 +34,12 @@ public class GenelWebDriver {
 
 
         // diğer senaryolar için default chrome
+        // paralel çalışmayan yani XML den parametreyle gelmeyen her çağıran için alttakılerı yazdık ,
+        // basic yani genel arayanlar için
         if (threadBrowserName.get() == null)
             threadBrowserName.set("chrome");
+
+
 
         if (threadDriver.get() == null) {      // bu thread de driver var mı
 

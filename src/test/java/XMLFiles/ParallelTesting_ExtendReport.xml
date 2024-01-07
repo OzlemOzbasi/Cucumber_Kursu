@@ -6,13 +6,13 @@
     <!--  <listeners>  http://github.com/extent-framework/extentreports-testng-adapter/issues/14  -->
     <!--                aşağıdaki class name i aratalım   -->
     <!--   <listener class-name="com.aventstack.extentreports.testng.listener.ExtentITestListenerClassAdapter"></listener>
-            </listeners>   -->
+            </listeners>    bu sekılde calısmadı o yuzden 14-16 satır arasını yazdık yukardakı github dan -->
     <!--   https://www.programsbuzz.com/article/cucumber-testng-extent-report-using-adapter     bu sayfadaki neden olmadı    -->
 
     <!--      -->
 
     <listeners>
-        <listener class-name="com.aventstack.extentreports.testng.listener.ExtentITestListenerClassAdapter"></listener>
+        <listener class-name="com.aventstack.extentreports.testng.listener.ExtentITestListenerAdapter"/>
     </listeners>
 
 
@@ -20,7 +20,7 @@
     <test name="Test 1">
         <parameter name="browser" value="firefox"></parameter>
         <classes>
-            <class name="Runners._08_TestRunnerParallel"></class>
+            <class name="Runners._08_TestRunnerParallel_ExtendReport"></class>
         </classes>
     </test>
 
@@ -28,7 +28,7 @@
     <test name="Test 2">
         <parameter name="browser" value="chrome"></parameter>
         <classes>
-            <class name="Runners._08_TestRunnerParallel"></class>
+            <class name="Runners._08_TestRunnerParallel_ExtendReport"></class>
         </classes>
     </test>
 

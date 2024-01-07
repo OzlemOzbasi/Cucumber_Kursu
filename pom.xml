@@ -174,12 +174,22 @@
                 <version>3.0.0-M1</version>
                 <configuration>
 
+
+    <!--   XML parallel çalışmada Master Report için eklendi alttaki suitXml kısmı           -->
+              <suiteXmlFiles>
+                  <suiteXmlFile>src/test/java/XMLFiles/ParallelTesting_MasterReport.xml</suiteXmlFile>
+              </suiteXmlFiles>
+
+ <!--   XML ın olmadıgı senaryoda Parallel calısma yok iken direk runner classı çalıştırmak için alttaki include kısmı kullanılır  -->
+ <!--   Bu alttaki include kısmı smoke testte run class calıstırmak ıcın kullanmıstık ,  -->
+ <!--    kullanacagımız reporta göre ınclude kısmı yada suiteXml kısmı kapatıp acıyoruz, yorum sayfasına alıp    -->
                     <includes>
-         <!-- for run class or classes  **/: bulundugu lokasyonu bütün klasörlere göre bulabiliyor.    -->
-                        <include>**/_04_TestRunnerSmoke.java</include>
-                  <!--  <include>**/runners/*TestRunner*.java</include>      -->
+         <!--    for run class or classes    **/:  bulundugu lokasyonu bütün klasörlere göre bulabiliyor.    -->
+                          <include>**/_04_TestRunnerSmoke.java</include>
+                  <!--    <include>**/runners/*TestRunner*.java</include>      -->
                     </includes>
-                    <testFailureIgnore>true</testFailureIgnore>
+
+                 <testFailureIgnore>true</testFailureIgnore>
 
                 </configuration>
             </plugin>

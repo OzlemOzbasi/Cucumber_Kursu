@@ -1,15 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="1" name="Failed suite [Surefire suite]" verbose="0">
-  <test thread-count="1" name="Surefire test(failed)" verbose="0">
+<suite thread-count="2" parallel="tests" name="Failed suite [Suit 1]" guice-stage="DEVELOPMENT" verbose="0">
+  <test thread-count="2" parallel="tests" name="Test 2(failed)" verbose="0">
+    <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="Runners._04_TestRunnerSmoke">
+      <class name="Runners._08_TestRunnerParallel_MasterReport">
         <methods>
-          <include name="runScenario" invocation-numbers="0 1"/>
+          <include name="beforeClass"/>
+          <include name="writeExtendReport"/>
+          <include name="runScenario" invocation-numbers="0 1 2"/>
           <include name="tearDownClass"/>
           <include name="setUpClass"/>
         </methods>
-      </class> <!-- Runners._04_TestRunnerSmoke -->
+      </class> <!-- Runners._08_TestRunnerParallel_MasterReport -->
     </classes>
-  </test> <!-- Surefire test(failed) -->
-</suite> <!-- Failed suite [Surefire suite] -->
+  </test> <!-- Test 2(failed) -->
+  <test thread-count="2" parallel="tests" name="Test 1(failed)" verbose="0">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="Runners._08_TestRunnerParallel_MasterReport">
+        <methods>
+          <include name="beforeClass"/>
+          <include name="writeExtendReport"/>
+          <include name="runScenario" invocation-numbers="0 1 2"/>
+          <include name="tearDownClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- Runners._08_TestRunnerParallel_MasterReport -->
+    </classes>
+  </test> <!-- Test 1(failed) -->
+</suite> <!-- Failed suite [Suit 1] -->

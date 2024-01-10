@@ -54,7 +54,7 @@ public class _07_Soru {
         for (int i = 0; i < satirSayisi; i++) {  // UST SATIRI SILIP satirSayisi YERINE  sheet.getPhysicalNumberOfRows();  DA YAZILABILIR
 
             Row row = sheet.getRow(i);   //  row = satır
-
+                                                                    // sütun sayısı istenen sütun sayısından büyükse ( null lar ıcın )
            if (sheet.getRow(i).getPhysicalNumberOfCells() > sutun)  // bos olan satırlarda run yapınca null gözükmemesi için
             donecek = donecek + row.getCell(sutun)+"\n";            //   donecek += row.getCell(sutun);   de aynı sey demek
                                                                     //  hatta buradakı row yerıne  sheet.getRow(i);  de yazabılırız

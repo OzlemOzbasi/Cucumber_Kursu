@@ -17,20 +17,20 @@ public class _06_ApachePOISteps {
 
         // Excel'den  oku ve  citizenship i  create et
 
-   ArrayList < ArrayList < String > >  tablo =
-        ExcelUtility.getListData ( "src/test/java/ApachePOI/resource/ApacheExcel2.xlsx" , "testCitizen" , 2 );
+        ArrayList<ArrayList<String>> tablo =
+                ExcelUtility.getListData("src/test/java/ApachePOI/resource/ApacheExcel2.xlsx", "testCitizen", 2);
 
 
-        for (  ArrayList < String > satir : tablo)
+        for (ArrayList<String> satir : tablo)
         {
             dc.findAndClick("addButton");
-            dc.findAndSend("nameInput", satir.get(0) );
-            dc.findAndSend("shortName", satir.get(1) );
+            dc.findAndSend("nameInput", satir.get(0));
+            dc.findAndSend("shortName", satir.get(1));
             dc.findAndClick("saveButton");
+            dc.findAndContainsText("successMessage", "success");    // bu kısmı dogrulama ıcın ekledık
 
         }
     }
-
 
 
     @Then("User Delete citizenship with ApachePOI")
@@ -39,5 +39,21 @@ public class _06_ApachePOISteps {
         // Excel'e kaydettiklerini  yine  Excel'den  okuyarak sil
 
 
+     ArrayList<ArrayList<String>> tablo =
+           ExcelUtility.getListData("src/test/java/ApachePOI/resource/ApacheExcel2.xlsx", "testCitizen", 1);
+
+
+        for (ArrayList<String> satir : tablo)
+        {
+            System.out.println("satir = " + satir);   // alttakını ve bunu excele ne kaydettıgını konsolda gormek / kontrol ıcın yazdık
+            System.out.println("satir.get(0) = " + satir.get(0));
+            
+            dc.SearchAndDelete(satir.get(0));
+            dc.findAndContainsText("successMessage", "success");    // bu kısmı dogrulama ıcın ekledık
+
+        }
     }
+
+
+
 }

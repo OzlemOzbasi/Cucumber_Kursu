@@ -148,11 +148,16 @@ public class DialogContent extends Parent{
 
     public void SearchAndDelete(String searchText){
 
+        // scrollUp()   --- web sayfasının yan cızgısını yukarı kaydırmak ıcın
+
         findAndSend("searchInput", searchText);  // arama kutucuğuna kelimeyi yaz (ARANACAK KELİMEYİ KUTUCUĞA GÖNDER)
         findAndClick("searchButton");            // arama butonuna bas
 
 
-        waitUntilLoading();
+    //    waitUntilLoading();
+
+    WebDriverWait wait = new WebDriverWait (GenelWebDriver.getDriver(), Duration.ofSeconds(30) );
+    wait .until(ExpectedConditions.textToBe(By.cssSelector("div[fxlayoutalign='center center'][class='control-full'] "), "Search"));
 
 
         findAndClick("deleteButton");            // silme butonuna bas

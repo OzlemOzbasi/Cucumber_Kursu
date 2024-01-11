@@ -8,6 +8,8 @@ Feature: ApachePOI  Citizen Functionality
     And Navigate to Citizenship page
 
 
-   Scenario: Create and delete citizenship from Excel
+   Scenario: Create citizenship from Excel
      When User Create citizenship with ApachePOI
+
+   Scenario: Delete citizenship from Excel
      Then User Delete citizenship with ApachePOI

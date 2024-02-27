@@ -29,8 +29,7 @@ public class Hooks {
 
 
     @After
-    public  void  after(Scenario scenario)
-    {
+    public  void  after(Scenario scenario) throws IOException {
 
  // Hatanın nerede oldugunu zamanı ve ekran görüntüsü ile birlikte target ta  FailedScreenShots dosyası acarak goruntuyu oraya atıyor
 

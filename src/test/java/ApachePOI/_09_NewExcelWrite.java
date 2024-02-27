@@ -14,7 +14,7 @@ public class _09_NewExcelWrite {
 
         // Solda resource kısmında hiç olmayan yeni bir EXCEL oluşturma
 
-   // Hafızada yeni workbook oluştur, sonra sheet oluştur, sonra row oluştur, sonra cell oluştur.
+       // Hafızada yeni workbook oluştur, sonra sheet oluştur, sonra row oluştur, sonra cell oluştur.
 
         XSSFWorkbook workbook = new XSSFWorkbook();      //   XSSF ---- sanal demek
         XSSFSheet sheet = workbook.createSheet("Sayfa1");

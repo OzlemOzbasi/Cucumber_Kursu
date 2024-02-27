@@ -1,10 +1,12 @@
 package Utilities;
 
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.ss.usermodel.WorkbookFactory;
+import io.cucumber.java.Scenario;
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -55,12 +57,55 @@ public class ExcelUtility {
     }
 
 
+    // TODO:   ( Yeni bir Excel'e bütün raporu yazacak )
+    //         Dosyanın varlıgını veya yoklugunu kontrol etmeyi Google dan bulunuz ( alttakı bu sekılde yapılır )
+    //         Kendisine verilen     path, scenario, browserTipi, zaman parametreleri ile
 
 
 
- /*
+  // asagıdakı metod ıle TODO da ıstedıgını yeni bir excel olusturarak yapıyoruz.
+    public static void writeExcel (String path, Scenario scenario, String browserName, String time){
+
+        XSSFWorkbook workbook = new XSSFWorkbook();
+        XSSFSheet sheet = workbook.createSheet("Sayfa1");
+
+        Row newRow = sheet.createRow(0);
+
+        Cell newCell = newRow.createCell(0);
+        newCell.setCellValue(scenario.getName() );
+
+        newCell = newRow.createCell(1);
+        newCell.setCellValue(scenario.getStatus().toString() );
+
+        newCell = newRow.createCell(2);
+        newCell.setCellValue(browserName );
+
+        newCell = newRow.createCell(3);
+        newCell.setCellValue(time );
+
+
+
+        try {
+            FileOutputStream outputStream = new FileOutputStream(path);
+            workbook.write(outputStream);
+
+            workbook.close();         //  Hafıza boşaltıldı
+            outputStream.close();
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+
+
+
 
 //  bu alttakı metod yanı main kısmını test için yaptık, yazdırıp konsolda gormek ıcın
+
     public static void main(String[] args) {
 
 
@@ -74,7 +119,7 @@ public class ExcelUtility {
     }
 
 
-  */
+
 
 
 }
